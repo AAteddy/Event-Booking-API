@@ -1,7 +1,7 @@
 package http
 
 import (
-	"event-booking-api/internal/usecases/ticket"
+	"github.com/AAteddy/event-booking-api/internal/usecases/ticket"
 	"github.com/go-playground/validator/v10"
 )
 

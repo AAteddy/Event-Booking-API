@@ -1,8 +1,8 @@
 package persistance
 
 import (
-	"event-booking-api/internal/domain/entities"
-	"event-booking-api/internal/domain/repositories"
+	"github.com/AAteddy/event-booking-api/internal/domain/entities"
+	"github.com/AAteddy/event-booking-api/internal/domain/repositories"
 	"gorm.io/gorm"
 )
 

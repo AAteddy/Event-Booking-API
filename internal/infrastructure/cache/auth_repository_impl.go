@@ -1,7 +1,7 @@
 package cache
 
 import (
-	"event-booking-api/internal/domain/repositories"
+	"github.com/AAteddy/event-booking-api/internal/domain/repositories"
 	"time"
 )
 

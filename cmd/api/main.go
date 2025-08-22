@@ -1,13 +1,13 @@
 package main
 
 import (
-	"event-booking-api/internal/adapters/http"
-	"event-booking-api/internal/config"
-	"event-booking-api/internal/infrastructure/cache"
-	"event-booking-api/internal/infrastructure/persistence"
-	"event-booking-api/internal/usecases/event"
-	"event-booking-api/internal/usecases/ticket"
-	"event-booking-api/internal/usecases/user"
+	"github.com/AAteddy/event-booking-api/internal/adapters/http"
+	"github.com/AAteddy/event-booking-api/internal/config"
+	"github.com/AAteddy/event-booking-api/internal/infrastructure/cache"
+	"github.com/AAteddy/event-booking-api/internal/infrastructure/persistence"
+	"github.com/AAteddy/event-booking-api/internal/usecases/event"
+	"github.com/AAteddy/event-booking-api/internal/usecases/ticket"
+	"github.com/AAteddy/event-booking-api/internal/usecases/user"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-playground/validator/v10"
 	"log"

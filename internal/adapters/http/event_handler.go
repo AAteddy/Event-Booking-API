@@ -2,7 +2,7 @@ package http
 
 
 import (
-	"event-booking-api/internal/usecases/event"
+	"github.com/AAteddy/event-booking-api/internal/usecases/event"
 	"github.com/go-playground/validator/v10"
 )
 
