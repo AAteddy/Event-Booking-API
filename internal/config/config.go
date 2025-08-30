@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/joho/godotenv"
+	"errors"
 	"os"
 )
 
@@ -12,13 +12,25 @@ type Config struct {
 }
 
 func LoadConfig() (*Config, error) {
-	if err := godotenv.Load(); err != nil {
-		return nil, err
+	databaseURL := os.Getenv("DATABASE_URL")
+	if databaseURL == "" {
+		return nil, errors.New("DATABASE_URL is required")
 	}
+
+	redisAddr := os.Getenv("REDIS_ADDR")
+	if redisAddr == "" {
+		return nil, errors.New("REDIS_ADDR is required")
+	}
+
+	jwtSecret := os.Getenv("JWT_SECRET")
+	if jwtSecret == "" {
+		return nil, errors.New("JWT_SECRET is required")
+	}
+
 	return &Config{
-		DatabaseURL: os.Getenv("DATABASE_URL"),
-		RedisAddr:   os.Getenv("REDIS_ADDR"),
-		JWTSecret:   os.Getenv("JWT_SECRET"),
+		DatabaseURL: databaseURL,
+		RedisAddr:   redisAddr,
+		JWTSecret:   jwtSecret,
 	}, nil
 
 }

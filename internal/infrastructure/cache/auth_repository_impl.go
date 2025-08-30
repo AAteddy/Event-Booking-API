@@ -7,7 +7,9 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
-type AuthRepositoryImpl struct{ Cache *RedisClient }
+type AuthRepositoryImpl struct{ 
+	Cache *RedisClient 
+}
 
 func (repo *AuthRepositoryImpl) BlacklistToken(token string, expiry time.Time) error {
 	ctx := context.Background()
