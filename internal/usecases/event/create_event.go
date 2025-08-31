@@ -14,6 +14,7 @@ type CreateEventInput struct {
 	Description  string
 	Date         time.Time `validate:"required"`
 	TotalTickets int       `validate:"required,gte=0"`
+	Location     string    `validate:"required"`
 	OrganizerID  string    `validate:"required"`
 }
 
