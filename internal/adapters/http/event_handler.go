@@ -24,8 +24,8 @@ type CreateEventInput struct {
 }
 
 type ListEventsInput struct {
-	Offset int       `json:"offset"`
-	Limit  int       `json:"limit"`
+	Offset int       `json:"offset" validate:"gte=0"`
+	Limit  int       `json:"limit" validate:"gte=1,lte=100"`
 	Date   time.Time `json:"date"`
 }
 

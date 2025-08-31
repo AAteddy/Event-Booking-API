@@ -7,7 +7,6 @@ import (
 	"github.com/AAteddy/event-booking-api/internal/domain/repositories"
 )
 
-
 type ListEventsInput struct {
 	Offset int
 	Limit  int
@@ -19,8 +18,8 @@ type ListEventsResponse struct {
 	Total  int64
 }
 
-type ListEventsUseCase struct{ 
-	Repo repositories.EventRepository 
+type ListEventsUseCase struct {
+	Repo repositories.EventRepository
 }
 
 func (uc *ListEventsUseCase) Execute(input ListEventsInput) (*ListEventsResponse, error) {
@@ -38,7 +37,7 @@ func (uc *ListEventsUseCase) Execute(input ListEventsInput) (*ListEventsResponse
 	if err != nil {
 		return nil, err
 	}
-	
+
 	return &ListEventsResponse{
 		Events: events,
 		Total:  total,
