@@ -60,8 +60,8 @@ func AuthMiddleware(authRepo *cache.AuthRepositoryImpl, jwtSecret string) func(h
 			}
 
 			userID, ok := claims["sub"].(string)
-			if !ok {
-				http.Error(w, "Invalid user ID in token", http.StatusUnauthorized)
+			if !ok || userID == "" {
+				http.Error(w, "Invalid or missing user ID in token", http.StatusUnauthorized)
 				return
 			}
 
