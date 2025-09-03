@@ -12,6 +12,7 @@ type RegisterUserInput struct {
 	Email    string `validate:"required,email"`
 	Password string `validate:"required,min=8"`
 	Role     string `validate:"required,oneof=user organizer admin"`
+	Name     string `validate:"required"`
 }
 
 type RegisterUserUseCase struct {
@@ -33,6 +34,7 @@ func (uc *RegisterUserUseCase) Execute(input *RegisterUserInput) (*entities.User
 		Email:    input.Email,
 		Password: input.Password,
 		Role:     input.Role,
+		Name:     input.Name,
 	}
 
 	// Save user to repository
